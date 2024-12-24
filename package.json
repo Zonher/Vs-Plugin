@@ -1,0 +1,65 @@
+{
+  "name": "13618",
+  "displayName": "StyleCheck",
+  "description": "Giving style for codestyle",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.3"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "contributes": {
+  "configuration": {
+    "type": "object",
+    "title": "StyleCheck Settings",
+    "properties": {
+      "styleCheck.imageForZero": {
+        "type": "string",
+        "default": "https://via.placeholder.com/150/FF0000/FFFFFF?text=No+Style",
+        "description": "Path to the image to show when no matches are found."
+      },
+      "styleCheck.imageForLessThanFive": {
+        "type": "string",
+        "default": "https://via.placeholder.com/150/00FF00/000000?text=Keep+Improving",
+        "description": "Path to the image to show when less than five matches are found."
+      },
+      "styleCheck.imageForFiveOrMore": {
+        "type": "string",
+        "default": "https://via.placeholder.com/150/0000FF/FFFFFF?text=Great+Style",
+        "description": "Path to the image to show when five or more matches are found."
+      }
+    }
+  }},
+    "commands": [{
+      "command": "13618.helloWorld",
+      "title": "Hello World"
+    },
+    {
+      "command": "styleCheck.runCheck",
+      "title": "Run Style Check"
+    },
+    {
+      "command": "styleCheck.setImages",
+      "title": "Set Images for Style Check"
+  }
+  ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.16.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
